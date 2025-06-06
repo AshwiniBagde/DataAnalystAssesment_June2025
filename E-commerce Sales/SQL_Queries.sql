@@ -43,6 +43,21 @@ ___total profit groped by category
 select category, sum(profit) from products 
 group by category
 
+___  Electronics items with amount greater than 1500
+
+select Order_id, amount, quantity, category from products
+where category = 'Electronics' and amount > 1500
+
+___InnerJoin___
+
+select c.order_id, customername, state, amount,category from products p
+inner join customers c
+on c.order_id = p.order_id
+order by amount DESC
+
+___Distinct Payment mode
+
+select distinct(paymentmode) from products
 
 
 
